@@ -103,12 +103,11 @@ input[type="text"], .inputtext, .dropdown {
 #casetaInput {
 	display: inline-block;
 	width: 220px;
-	background-color: red;
 	padding: 0px;
 	margin: 0px 10px;
+	vertical-align: top;
 }
 #input_criteriu {
-	background-color: #1d1d1d;
 	display: inline-block;
 	width: 220px;
 	height: 40px;
@@ -121,6 +120,10 @@ input[type="text"], .inputtext, .dropdown {
 	border-radius: 3px;
 	color: #8b8b8b;
 	text-shadow: 2px 2px 3px #000000;
+	background: #1d1d1d url("../images/arrow.png") no-repeat right;
+	
+	-webkit-appearance: none;
+	background-position-x: 200px;
 }
 
 

@@ -90,6 +90,11 @@ input[type="text"], .inputtext, .dropdown {
 	float: center;
 	margin: 0px auto;
 }
+.box-90 {
+	width: 70%;
+	float: center;
+	margin: 0px auto;
+}
 
 #cautare {
 	max-width: 80%;

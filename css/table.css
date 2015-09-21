@@ -1,101 +1,41 @@
-#butoane {
-         -webkit-box-align:center;
-         -webkit-box-pack:center;
-         display:-webkit-box;
-         margin-top:10%;
-         }
-
-/*buton cautare*/
-
-.button {border-radius:2px;
-         height:40px;
-         width:150px;
-         background-color:#12668d;
-         text-align:center;
-         padding:8px 13px;
-         -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	 -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	 box-shadow: 0 1px 2px rgba(0,0,0,.2);
-         background: -webkit-gradient(linear, left top, left bottom, from(#1583b6), to(#126a93));
-	 background: -moz-linear-gradient(top,  #1583b6,  #126a93);
-         margin-bottom:25px;
-        
-         display:inline-block;
-         
-     
-       }
-
-
-.button:hover { background: -webkit-gradient(linear, left top, left bottom, from(#1894cd), to(#1681b2));
-	     background: -moz-linear-gradient(top,  #1894cd,  #1681b2);
-             
-              }
-
-#link1 {color:#ffffff;
-            font-family:  Verdana, serif;
-            text-decoration:none;
-            font-size:17px;}
-
-
-/*buton criteriu*/
-.dropdown {
-           display:inline-block;
-          }
-
-
-.dropdown .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    
-    left: 0;
-    margin: 0;
-    cursor:pointer;
-    list-style:none;
-    padding:0;
-    width:100%;
-    
+/*pentru tabel*/ 
+.large-padding {
+  padding: 10px 60px; /* 10px for top and bottom to keep inline with the other cells, 60px for left and right */
 }
 
-.dropdown:hover .dropdown-menu {display:block;}
+.large-padding2 {
+  padding: 10px 150px; /* 10px for top and bottom to keep inline with the other cells, 150px for left and right */
+}
 
-.dropdown .dropdown-menu  { border: 2px solid #919191;
-                            border-top: 0px;
-                           border-radius: 2px;
-                           background:#1d1d1d;
-                           text-align:left;
-                           color:#919191;
-                           font-family:  Verdana, serif;
-                           font-size:15px;
-                             
-                            }
-.dropdown .dropdown-menu  li {padding-top:12px;
-                              padding-left:13px;
-                              padding-bottom:6px;}
+.large-padding3 {
+  padding: 10px 50px; /* 10px for top and bottom to keep inline with the other cells, 50px for left and right */
+}
 
-.dropdown .dropdown-menu  li:hover { background:#2b2b2b;
-                                   }
+.large-padding4 {
+  padding: 10px 35px; /* 10px for top and bottom to keep inline with the other cells, 35px for left and right */
+}
 
-.caret {color: #919191;
-       position:relative;
-       left:150px;
-       }
+.large-padding5 {
+  padding: 10px 65px; /* 10px for top and bottom to keep inline with the other cells, 65px for left and right */
+}
 
+.large-padding6 {
+  padding: 10px 70px; /* 10px for top and bottom to keep inline with the other cells, 70px for left and right */
+}
 
-/*buton categorie*/
-.buton-categorie {height:40px;
-                  width:250px;
-                  background-color:#1d1d1d;
-                  border: 2px solid #919191;
-                  border-radius: 2px;
-                  cursor:pointer;
-                  text-align:left;
-                  color:#919191;
-                  padding:8px 13px;
-                  font-family:  Verdana, serif;
-                  font-size:15px;
-                  display:inline-block;
-                  
+.large-padding7 {
+  padding: 10px 10px; /* 10px for top and bottom to keep inline with the other cells, 10px for left and right */
+}
+
+table {
+    border-collapse: collapse;
 }
 
 
-
+  
+  table, tr, td{
+	  background-color:#222222;
+	  color:#edebec;
+	  max-width: 1360px; 
+	 
+  }

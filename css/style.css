@@ -105,7 +105,7 @@ input[type="text"], .inputtext, .dropdown {
 	display: inline-block;
 	width: 220px;
 	padding: 0px;
-	margin: 0px 10px;
+	margin: 10px 10px;
 	vertical-align: top;
 }
 #input_criteriu {
@@ -122,6 +122,7 @@ input[type="text"], .inputtext, .dropdown {
 	color: #8b8b8b;
 	text-shadow: 2px 2px 3px #000000;
 	background: #1d1d1d url("../images/arrow.png") no-repeat right;
+	padding: 0px 10px;
 	
 	-webkit-appearance: none;
 	background-position-x: 200px;

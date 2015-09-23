@@ -1,41 +1,45 @@
-/*pentru tabel*/ 
-.large-padding {
-  padding: 10px 60px; /* 10px for top and bottom to keep inline with the other cells, 60px for left and right */
-}
+/*table*/ 
+.grid-container{
+        width: 100%; 
+        max-width: 1200px;      
+    }
 
-.large-padding2 {
-  padding: 10px 150px; /* 10px for top and bottom to keep inline with the other cells, 150px for left and right */
-}
+    /*-- our cleafix hack -- */ 
+     .row:before,
+    .row:after {
+        content:"";
+          display: table ;
+        clear:both;
+    }
 
-.large-padding3 {
-  padding: 10px 50px; /* 10px for top and bottom to keep inline with the other cells, 50px for left and right */
-}
+    [class*='col-'] {
+        float: left; 
+        min-height: 1px; 
+        width: 16.66%; 
+        /*-- our gutter -- */
+        padding: 0px; 
+        background-color: #edebec;
+    }
 
-.large-padding4 {
-  padding: 10px 35px; /* 10px for top and bottom to keep inline with the other cells, 35px for left and right */
-}
+    .col-1{ width: 14%; }
+    .col-2{ width: 33.33%; }
+    .col-3{ width: 50%;    }
+    .col-4{ width: 66.66%; }
+    .col-5{ width: 83.33%; }
+    .col-6{ width: 100%;   }
 
-.large-padding5 {
-  padding: 10px 65px; /* 10px for top and bottom to keep inline with the other cells, 65px for left and right */
-}
+    .outline, .outline *{
+        outline: 1px solid #edebec; 
+    }
 
-.large-padding6 {
-  padding: 10px 70px; /* 10px for top and bottom to keep inline with the other cells, 70px for left and right */
-}
-
-.large-padding7 {
-  padding: 10px 10px; /* 10px for top and bottom to keep inline with the other cells, 10px for left and right */
-}
-
-table {
-    border-collapse: collapse;
-}
-
-
-  
-  table, tr, td{
-	  background-color:#222222;
-	  color:#edebec;
-	  max-width: 1360px; 
-	 
-  }
+    /*-- some extra column content styling --*/
+    [class*='col-'] >
+	p {
+     background-color:#222222; 
+     padding: 0;
+     margin: 0;
+     text-align: center; 
+     color: white; 
+    }
+	
+	

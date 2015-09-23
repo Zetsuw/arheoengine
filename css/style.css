@@ -2,12 +2,20 @@
 @import url(https://fonts.googleapis.com/css?family=Play:400,700); /* Play */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic); /* Open sans */
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
 	background-color: #222222;
 	
 	color: #ffffff;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
+	font-weight: lighter;
 }
 
 #logo {
@@ -15,18 +23,21 @@ body {
 	width: 289px;
 	height: 49px;
 	float: center;
-	margin: 180px auto 40px;
+	margin: 10px auto 40px;
 }
 
 .button {
 	width: 220px;
 	height: 40px;
-	outline: none; margin: 0px;
+	float: center;
+	outline: none;
+	margin: 20px auto;
+	display: block;
 }
 .button { width: 145px; cursor: pointer; }
 
 .inputtext {
-	width: 200px;
+	width: 220px;
 	height: 40px;
 	outline: none;
 	margin: 0px;
@@ -72,7 +83,7 @@ body {
 	outline: none;
 }
 
-input[type="text"], .inputtext, .dropdown {
+input[type="text"], .inputtext {
 	background-color: #1d1d1d;
 	border: 1px solid #919191;
 	border-radius: 3px;
@@ -82,20 +93,21 @@ input[type="text"], .inputtext, .dropdown {
 	margin: 0px 0px;
 }
 
-.dropdown {
-	margin: 0px auto;
-	text-align: left;
-	padding: 4px 5px;
-	width: 220px;
-}
-
 .box-70, .box-90 {
 	float: center;
 	margin: 0px auto;
 }
 .box-90 {	width: 90%;	}
 .box-70 {	width: 70%;	}
-.box-full {	width: 100%;	}
+.box-full {	width: 100%;
+
+  margin: auto;
+  position: absolute;
+  top: 50%; left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
 
 #cautare {
 	max-width: 80%;
@@ -111,7 +123,7 @@ input[type="text"], .inputtext, .dropdown {
 /*buton criteriu*/
 #casetaInput {
 	display: inline-block;
-	width: 220px;
+	width: 218px;
 	padding: 0px;
 	margin: 10px 10px;
 	vertical-align: top;
@@ -119,7 +131,7 @@ input[type="text"], .inputtext, .dropdown {
 
 .input_criteriu {
 	display: inline-block;
-	width: 100%;
+	width: 220px;
 	height: 42px;
 	
 	text-align: left;

@@ -157,7 +157,22 @@ a:hover {
 	text-decoration: none;
 }
 
+#error {
+	background-color: red;
+	border-radius: 3px;
+	border: 1px solid black;
+	width: 100%;
+	height: 40px;
+	
+	padding: 10px;
+	margin-bottom: 25px;
+}
 
+.rightClose{
+	color: white;
+	float: right;
+	margin: 0px;
+}
 
 
 

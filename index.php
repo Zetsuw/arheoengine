@@ -14,6 +14,8 @@
 	
 	<script src="js/jquery-2.1.4.min.js"></script>
 	
+	<link rel="icon" type="image/png" href="favicon.png" />
+	
 </head>
 <body>
 

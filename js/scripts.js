@@ -13,3 +13,8 @@ function SetareCriteriu(x){
 	$('#criteriuINPUT').text(x);
 	$('#dropList').hide();
 }
+
+$('.rightClose').click(function(){
+	var id=$('.rightClose').closest("div").attr("id");
+	$("#"+id).fadeOut();
+});

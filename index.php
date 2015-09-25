@@ -1,3 +1,12 @@
+<?php
+	if(isset($_GET["error"])){
+		if($_GET["error"]!="")
+			$error = $_GET["error"];
+		else $error = "NONE";
+	} else {
+		$error = "NONE";
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +32,17 @@
 		<a href="index.php"><div id="logo" class="wow bounceIn"></div></a>
 	
 		<form action="table.php" id="cautare">
+
+			<?php if($error=="404"): ?>
+				<div id="error"><i class="fa fa-exclamation-triangle"></i> Nu se pot gasi rezultat
+					<i class="fa fa-times rightClose"></i>
+				</div>
+			<?php endif; ?>
+
 			<div id="casetaInput" class="wow fadeInLeft">
-				<select name="criteriu" class="input_criteriu" form="cautare">
+				<span class="casetaText">Selectati criteriu:</span>
+
+				<select name="searchby" class="input_criteriu" form="cautare">
 					<option value="Categorie sit">Categorie sit</option>
 					<option value="Tip sit">Tip sit</option>
 					<option value="Cod SIRUTA">Cod SIRUTA</option>
@@ -39,10 +57,18 @@
 			</div>
 			
 			<div id="casetaInput" class="wow fadeInRight">
-				<input type="text" class="inputtext" name="valCriteriu" placeholder="Valuare criteriu...">
+				<span class="casetaText">Introduceti o valoare:</span>
+
+				<input type="text" class="inputtext" name="value" placeholder="Valuare criteriu...">
+			</div>
+
+			<div id="casetaInput" class="wow fadeInRight">
+				<span class="casetaText">Randuri:</span>
+
+				<input type="text" class="inputtext" style="width: 100px; display: block;" name="rows" value="15">
 			</div>
 			
-			<input type="hidden" name="pagina" value="1">
+			<input type="hidden" name="page" value="1">
 			
 			<input type="submit" class="button wow fadeInUp" value="Cauta">
 			

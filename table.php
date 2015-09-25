@@ -1,17 +1,42 @@
 <?php
 
-$criteriu = $_GET["criteriu"];
-$valCriteriu = $_GET["valCriteriu"];
-$pagina = $_GET["valCriteriu"];
+if(isset($_GET["searchby"])){
+	if($_GET["searchby"]!="")
+		$searchby = $_GET["searchby"];
+	else $searchby = "NONE";
+} else {
+	$searchby = "NONE";
+}
+if(isset($_GET["value"])){
+	if($_GET["value"]!="")
+		$value = $_GET["value"];
+	else $value = "NONE";
+} else {
+	$value = "NONE";
+}
+if(isset($_GET["page"]) ){
+	if($_GET["page"]!="")
+		$page = $_GET["page"];
+	else $page = 1;
+} else {
+	$page = 1;
+}
+if(isset($_GET["rows"]) ){
+	if($_GET["rows"]!="")
+		$rows = $_GET["rows"];
+	else $rows = 15;
+} else {
+	$rows = 15;
+}
 
-$file = fopen("tabel.csv","r");
+$file = fopen("data.csv","r");
 
 $keys = array(
 	"identificatorul_sitului", 
 	"url", 
 	"codul_ran_al_sitului", 
 	"codul_lmi_al_sitului", 
-	"judetul", 
+	"Judet", 
 	"unitatea_administrativa", 
 	"localitatea", 
 	"codul_siruta", 
@@ -83,18 +108,25 @@ $keys = array(
 );
 
 $situri = array();
-$index = 0;
+$index = $rows*($page-1);
+
 while(! feof($file))
-	{
-		if($index>15) break;
-		$var = fgetcsv($file, 0, ";");
-		if($var){
-		$tabel = array_combine ( $keys , $var );
-		$situri[] = $tabel;
-		$index++;
+{
+	$var = fgetcsv($file, 0, "|");
+	if($var){
+		$table = array_combine ( $keys , $var );
+		if($table[$searchby]==$value)
+		{
+			$situri[] = $table;
+		}
 	}
 }
 fclose($file);
+
+
+$situri = array_slice($situri, $index, $page*$rows);
+
+
 
 ?>
 <!DOCTYPE html>
@@ -121,10 +153,10 @@ fclose($file);
 	
 	<a href="index.php"><div id="logo" class="wow bounceIn"></div></a>
 	
-	<div class="box-90" style="overflow-x:scroll">
-		<div id="error"><i class="fa fa-exclamation-triangle"></i> Nu stii sa cauti
-			<i class="fa fa-times rightClose" onClick="$('#error').fadeOut();"></i>
-		</div>
+	<div class="box-90">
+
+		S-au afisat <?php echo $index-$rows*($page-1); ?> rezultate.
+		<br><br>
 		<table style="width:100%">
 			<tr>
 				<td>Denumire</td>
@@ -132,18 +164,18 @@ fclose($file);
 				<td>Tip</td>
 				<td>Judet</td>
 				<td>Localitate</td>
-				<td>Cronologie</td>
-				<td>Detalii</td>
+				<td>Epoca sit</td>
+				<td>Suprafata sitului</td>
 			</tr>
 			<?php foreach($situri as $value): ?>
 			<tr>
 				<td><?php echo $value["numele_sitului"]; ?></td>
 				<td><?php echo $value["categoria_sitului"]; ?></td> 
 				<td><?php echo $value["tipul sitului"]; ?></td> 
-				<td><?php echo $value["judetul"]; ?></td> 
+				<td><?php echo $value["Judet"]; ?></td> 
 				<td><?php echo $value["localitatea"]; ?></td> 
-				<td><?php echo $value["numele_sitului"]; ?></td> 
-				<td><?php echo $value["numele_sitului"]; ?></td> 
+				<td><?php echo $value["epoca (sit)"]; ?></td> 
+				<td><?php echo $value["suprafata_sitului"]; ?></td> 
 			</tr>
 			<?php endforeach; ?>
 		</table>

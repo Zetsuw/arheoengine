@@ -97,5 +97,15 @@
                   
 }
 
+#tabledetails {text-align:left;
+               border-collapse: collapse;
+               width:100%;
+               margin-top:5%;
+      }
+
+#tabledetails  td{border: 1px solid white;
+                  padding:5px;
+              }
+
 
 

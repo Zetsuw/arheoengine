@@ -28,6 +28,15 @@ if(isset($_GET["rows"]) ){
 } else {
 	$rows = 15;
 }
+if(isset($_GET["ages"]) ){
+	if($_GET["ages"]!=""){
+		$ages = $_GET["ages"];
+		$value = $ages;
+	}
+	else $ages = "NONE";
+} else {
+	$ages = "NONE";
+}
 
 $file = fopen("data.csv","r");
 
@@ -61,7 +70,7 @@ $keys = array(
 	"categoria_sitului", 
 	"tipul sitului", 
 	"datarea relativã a sitului", 
-	"epoca (sit)", 
+	"Epoca sit", 
 	"descoperitorul sitului", 
 	"data descoperirii sitului", 
 	"starea de conservare", 
@@ -127,9 +136,6 @@ $results = count($situri);
 
 $situri = array_slice($situri, $index, $page*$rows);
 
-if($results==0){
-	header("Location: index.php?error=date");
-}
 
 ?>
 <!DOCTYPE html>
@@ -159,7 +165,7 @@ if($results==0){
 	
 	<div class="box-90">
 
-		S-au afisat <?php echo $results ?> rezultate pentru <?php echo $searchby . " " . $value; ?>.
+		S-au afisat <?php echo $results ?> rezultate pentru: <?php echo $searchby . " - " . $value; ?>.
 		<br><br>
 		<table style="width:100%">
 			<tr>
@@ -178,7 +184,7 @@ if($results==0){
 				<td><?php echo $value["tipul sitului"]; ?></td> 
 				<td><?php echo $value["Judet"]; ?></td> 
 				<td><?php echo $value["localitatea"]; ?></td> 
-				<td><?php echo $value["epoca (sit)"]; ?></td> 
+				<td><?php echo $value["Epoca sit"]; ?></td> 
 				<td><?php echo $value["suprafata_sitului"]; ?></td> 
 			</tr>
 			<?php endforeach; ?>

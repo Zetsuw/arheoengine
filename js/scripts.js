@@ -18,3 +18,15 @@ $('.rightClose').click(function(){
 	var id=$('.rightClose').closest("div").attr("id");
 	$("#"+id).fadeOut();
 });
+
+$("#age_options").hide();
+
+$( "#search_categories" ).change(function(){
+	if($( "#search_categories" ).val()=="Epoca sit"){
+		$("#search_value").hide();
+		$("#age_options").show();
+	} else {
+		$("#search_value").show();
+		$("#age_options").hide();
+	}
+});

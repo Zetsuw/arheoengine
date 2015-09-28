@@ -126,9 +126,9 @@ input[type="text"], .inputtext {
 }
 
 /*buton criteriu*/
-#casetaInput {
+.casetaInput {
 	display: inline-block;
-	width: 218px;
+	max-width: 218px;
 	padding: 0px;
 	margin: 10px 10px;
 	vertical-align: top;

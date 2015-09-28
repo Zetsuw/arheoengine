@@ -43,30 +43,40 @@
 				</div>
 			<?php endif; ?>
 
-			<div id="casetaInput" class="wow fadeInLeft">
+			<div id="search_categs" class="casetaInput wow fadeInLeft">
 				<span class="casetaText">Selectati criteriu:</span>
 
-				<select name="searchby" class="input_criteriu" form="cautare">
-					<option value="Categorie sit">Categorie sit</option>
+				<select name="searchby" class="input_criteriu" form="cautare" id="search_categories">
 					<option value="Tip sit">Tip sit</option>
 					<option value="Cod SIRUTA">Cod SIRUTA</option>
 					<option value="Judet">Judet</option>
 					<option value="Comuna">Comuna</option>
 					<option value="Localitate">Localitate</option>
-					<option value="Epoca">Epoca</option>
+					<option value="Epoca sit">Epoca</option>
 					<option value="Datare">Datare</option>
-					<option value="Stare inregistrare">Stare inregistrare</option>
-					<option value="Numai situri ilustrate">Numai situri ilustrate</option>
 				</select>
 			</div>
 			
-			<div id="casetaInput" class="wow fadeInUp">
+			<div id="search_value" class="casetaInput wow fadeIn">
 				<span class="casetaText">Introduceti o valoare:</span>
 
 				<input type="text" class="inputtext" name="value" placeholder="Valuare criteriu...">
 			</div>
 
-			<div id="casetaInput" class="wow fadeInRight">
+			<div id="age_options" class="casetaInput wow fadeIn">
+				<span class="casetaText">Selectati epoca:</span>
+
+				<select name="ages" class="input_criteriu" form="cautare" id="ages">
+					<option value="Eneolitic">Eneolitic</option>
+					<option value="Epoca medievală">Epoca medievală</option>
+					<option value="Tip sit">Epoca migratiilor</option>
+					<option value="Tip sit">Epoca moderna</option>
+					<option value="Tip sit">Epoca romana</option>
+					<option value="Eneolitic">Eneolitic</option>
+				</select>
+			</div>
+
+			<div class="casetaInput wow fadeInRight">
 				<span class="casetaText"><i class="fa fa-question-circle" title="Randuri afisate pe pagina de rezultate"></i> Randuri:</span>
 
 				<input type="text" class="inputtext" style="width: 100px; display: block; clear: both;" name="rows" value="15">

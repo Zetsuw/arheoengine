@@ -43,14 +43,14 @@ body {
 	margin: 0px;
 }
 
-.button {
+.button, .button a {
 	background: #1583b6; 																							/* Old browsers */
 	background: -moz-linear-gradient(top, #1583b6 0%, #115e81 100%); 												/* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1583b6), color-stop(100%,#115e81)); 	/* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, #1583b6 0%,#115e81 100%); 												/* Chrome10+,Safari5.1+ */
 	background: -o-linear-gradient(top, #1583b6 0%,#115e81 100%); 													/* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #1583b6 0%,#115e81 100%); 													/* IE10+ */
-	background: linear-gradient(to bottom, #1583b6 0%,#115e81 100%); 												/* W3C */
+	background: linear-gradient(to bottom, #1583b6 0%,#115e81 100%);												/* W3C */
 
 	border: 1px solid #1bafcf;
 	border-radius: 3px;
@@ -63,7 +63,7 @@ body {
 	padding: 0px; height: 40px;
 	
 }
-.button:hover {
+.button:hover, .button a:hover {
 	background: #1896d0; /* Old browsers */
 	background: -moz-linear-gradient(top, #1896d0 0%, #14709b 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1896d0), color-stop(100%,#14709b)); /* Chrome,Safari4+ */
@@ -72,7 +72,7 @@ body {
 	background: -ms-linear-gradient(top, #1896d0 0%,#14709b 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #1896d0 0%,#14709b 100%); /* W3C */
 }
-.button:active {
+.button:active, .button a:active {
 	background: #12719d; /* Old browsers */
 	background: -moz-linear-gradient(top, #12719d 0%, #0d4b67 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#12719d), color-stop(100%,#0d4b67)); /* Chrome,Safari4+ */
@@ -81,6 +81,11 @@ body {
 	background: -ms-linear-gradient(top, #12719d 0%,#0d4b67 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #12719d 0%,#0d4b67 100%); /* W3C */
 	outline: none;
+}
+.button a{
+	text-decoration: none;
+	vertical-align: middle;
+	width: 30px;
 }
 
 input[type="text"], .inputtext {
@@ -222,7 +227,28 @@ a:hover {
 
 
 
-
+i[title]:hover:after {
+  content: attr(title);
+  padding: 4px 8px;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 900000;
+  white-space: nowrap;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0px 0px 4px #222;
+  -webkit-box-shadow: 0px 0px 4px #222;
+  box-shadow: 0px 0px 4px #222;
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+}
 
 
 

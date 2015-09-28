@@ -127,7 +127,9 @@ $results = count($situri);
 
 $situri = array_slice($situri, $index, $page*$rows);
 
-
+if($results==0){
+	header("Location: index.php?error=date");
+}
 
 ?>
 <!DOCTYPE html>
@@ -181,6 +183,10 @@ $situri = array_slice($situri, $index, $page*$rows);
 			</tr>
 			<?php endforeach; ?>
 		</table>
+
+		<div id="pagination">
+			<a href="" class="button">1</a>
+		</div>
 		
 	</div>
 	

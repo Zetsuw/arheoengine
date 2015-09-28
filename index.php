@@ -33,8 +33,12 @@
 	
 		<form action="table.php" id="cautare">
 
-			<?php if($error=="404"): ?>
-				<div id="error"><i class="fa fa-exclamation-triangle"></i> Nu se pot gasi rezultat
+			<?php if($error!="NONE"): ?>
+				<div id="error"><i class="fa fa-exclamation-triangle"></i> <?php if($error=="404"): ?>
+						Nu se pot gasi rezultate.
+					<?php elseif ($error=="date"): ?>
+						Datele nu au fost introduse corect.
+					<?php endif; ?>
 					<i class="fa fa-times rightClose"></i>
 				</div>
 			<?php endif; ?>
@@ -56,14 +60,14 @@
 				</select>
 			</div>
 			
-			<div id="casetaInput" class="wow fadeInRight">
+			<div id="casetaInput" class="wow fadeInUp">
 				<span class="casetaText">Introduceti o valoare:</span>
 
 				<input type="text" class="inputtext" name="value" placeholder="Valuare criteriu...">
 			</div>
 
 			<div id="casetaInput" class="wow fadeInRight">
-				<span class="casetaText">Randuri:</span>
+				<span class="casetaText"><i class="fa fa-question-circle" title="Randuri afisate pe pagina de rezultate"></i> Randuri:</span>
 
 				<input type="text" class="inputtext" style="width: 100px; display: block; clear: both;" name="rows" value="15">
 			</div>
@@ -74,8 +78,8 @@
 			
 		</form>
 		
-		<center>Numar total de situri: <span class="total_results">1500</span><br>
-		<a href="">Vezi mai mult</a>
+		<center>Numar total de situri: <span class="total_results">25.965</span><br>
+		<a href="">Afisati-le pe toate</a>
 		</center>
 	</div>
 	

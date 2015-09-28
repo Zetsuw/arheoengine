@@ -112,7 +112,7 @@ $index = $rows*($page-1);
 
 while(! feof($file))
 {
-	$var = fgetcsv($file, 0, "|");
+	$var = fgetcsv($file, 0, "|", chr(8));
 	if($var){
 		$table = array_combine ( $keys , $var );
 		if($table[$searchby]==$value)
@@ -123,6 +123,7 @@ while(! feof($file))
 }
 fclose($file);
 
+$results = count($situri);
 
 $situri = array_slice($situri, $index, $page*$rows);
 
@@ -140,6 +141,7 @@ $situri = array_slice($situri, $index, $page*$rows);
 	
 	<!-- Stylesheets -->
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/table.css" rel="stylesheet" type="text/css">
 	
 	<link href="css/animate.css" rel="stylesheet" type="text/css">
 	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -155,7 +157,7 @@ $situri = array_slice($situri, $index, $page*$rows);
 	
 	<div class="box-90">
 
-		S-au afisat <?php echo $index-$rows*($page-1); ?> rezultate.
+		S-au afisat <?php echo $results ?> rezultate pentru <?php echo $searchby . " " . $value; ?>.
 		<br><br>
 		<table style="width:100%">
 			<tr>
@@ -165,7 +167,7 @@ $situri = array_slice($situri, $index, $page*$rows);
 				<td>Judet</td>
 				<td>Localitate</td>
 				<td>Epoca sit</td>
-				<td>Suprafata sitului</td>
+				<td>Pagina cu detalii</td>
 			</tr>
 			<?php foreach($situri as $value): ?>
 			<tr>
@@ -179,13 +181,6 @@ $situri = array_slice($situri, $index, $page*$rows);
 			</tr>
 			<?php endforeach; ?>
 		</table>
-		
-		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		
 		
 	</div>
 	

@@ -65,7 +65,7 @@
 			<div id="casetaInput" class="wow fadeInRight">
 				<span class="casetaText">Randuri:</span>
 
-				<input type="text" class="inputtext" style="width: 100px; display: block;" name="rows" value="15">
+				<input type="text" class="inputtext" style="width: 100px; display: block; clear: both;" name="rows" value="15">
 			</div>
 			
 			<input type="hidden" name="page" value="1">

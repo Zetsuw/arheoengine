@@ -29,7 +29,7 @@
 <body>
 
 	<div class="box-full">
-		<a href="index.php"><div id="logo" class="wow bounceIn"></div></a>
+		<div id="logo" class="wow bounceIn"></div>
 	
 		<form action="table.php" id="cautare">
 
@@ -48,7 +48,7 @@
 
 				<select name="searchby" class="input_criteriu" form="cautare" id="search_categories">
 					<option value="Tip sit">Tip sit</option>
-					<option value="Cod SIRUTA">Cod SIRUTA</option>
+					<option value="codul_siruta">Cod SIRUTA</option>
 					<option value="Judet">Judet</option>
 					<option value="Comuna">Comuna</option>
 					<option value="Localitate">Localitate</option>
@@ -60,7 +60,7 @@
 			<div id="search_value" class="casetaInput wow fadeIn">
 				<span class="casetaText">Introduceti o valoare:</span>
 
-				<input type="text" class="inputtext" name="value" placeholder="Valuare criteriu...">
+				<input type="text" id="value" class="inputtext" name="value" placeholder="Valuare criteriu...">
 			</div>
 
 			<div id="age_options" class="casetaInput wow fadeIn">

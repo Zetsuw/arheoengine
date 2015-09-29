@@ -1,142 +1,5 @@
 <?php
-
-if(isset($_GET["searchby"])){
-	if($_GET["searchby"]!="")
-		$searchby = $_GET["searchby"];
-	else $searchby = "NONE";
-} else {
-	$searchby = "NONE";
-}
-if(isset($_GET["value"])){
-	if($_GET["value"]!="")
-		$value = $_GET["value"];
-	else $value = "NONE";
-} else {
-	$value = "NONE";
-}
-if(isset($_GET["page"]) ){
-	if($_GET["page"]!="")
-		$page = $_GET["page"];
-	else $page = 1;
-} else {
-	$page = 1;
-}
-if(isset($_GET["rows"]) ){
-	if($_GET["rows"]!="")
-		$rows = $_GET["rows"];
-	else $rows = 15;
-} else {
-	$rows = 15;
-}
-if(isset($_GET["ages"]) ){
-	if($_GET["ages"]!=""){
-		$ages = $_GET["ages"];
-		$value = $ages;
-	}
-	else $ages = "NONE";
-} else {
-	$ages = "NONE";
-}
-
-$file = fopen("data.csv","r");
-
-$keys = array(
-	"identificatorul_sitului", 
-	"url", 
-	"codul_ran_al_sitului", 
-	"codul_lmi_al_sitului", 
-	"Judet", 
-	"unitatea_administrativa", 
-	"localitatea", 
-	"codul_siruta", 
-	"adresa_sitului", 
-	"punctul", 
-	"nume_alternative_ale_punctului", 
-	"numele_punctului_in_alte_limbi", 
-	"reper", 
-	"reper_hidrografic", 
-	"tipul_reperului_hidrografic", 
-	"parcela_cadastrala", 
-	"longitudine", 
-	"latitudine", 
-	"altitudine", 
-	"longitudine", 
-	"latitudine", 
-	"forma_de_relief", 
-	"suprafata_sitului", 
-	"numele_sitului", 
-	"nume_alternative_ale_sitului", 
-	"numele_sitului în alte limbi", 
-	"categoria_sitului", 
-	"tipul sitului", 
-	"datarea relativã a sitului", 
-	"Epoca sit", 
-	"descoperitorul sitului", 
-	"data descoperirii sitului", 
-	"starea de conservare", 
-	"regim de proprietate", 
-	"descrierea sitului", 
-	"observa?ii la sit", 
-	"utilizarea terenului", 
-	"identificatorul ansamblului", 
-	"codul RAN al ansamblului", 
-	"codul LMI al ansamblului", 
-	"numele ansamblului", 
-	"tipul ansamblului", 
-	"datarea relativã a ansamblului", 
-	"epoca (ansamblu)", 
-	"perioada (ansamblu)", 
-	"cultura (ansamblu)", 
-	"faza culturalã (ansamblu)", 
-	"localizarea ansamblului în sit", 
-	"descrierea ansamblului", 
-	"observa?ii la ansamblu", 
-	"identificatorul complexului", 
-	"numele complexului", 
-	"tipul complexului", 
-	"datarea relativã a complexului", 
-	"epoca (complex)", 
-	"perioada (complex)", 
-	"cultura (complex)", 
-	"faza culturalã (complex)", 
-	"descrierea complexului", 
-	"observa?ii la complex", 
-	"identificatorul obiectului", 
-	"categoriea obiectului", 
-	"tipul obiectului", 
-	"materialul", 
-	"datarea relativã a obiectului", 
-	"epoca (obiect)", 
-	"perioada (obiect)", 
-	"cultura (obiect)", 
-	"faza culturalã (obiect)", 
-	"descrierea obiectului", 
-	"observa?ii la obiect", 
-	"data actualizãrii"
-
-);
-
-$situri = array();
-$index = $rows*($page-1);
-
-while(! feof($file))
-{
-	$var = fgetcsv($file, 0, "|", chr(8));
-	if($var){
-		$table = array_combine ( $keys , $var );
-		if($table[$searchby]==$value)
-		{
-			$situri[] = $table;
-		}
-	}
-}
-fclose($file);
-
-$results = count($situri);
-
-$situri = array_slice($situri, $index, $page*$rows);
-
-
+include 'engine.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,33 +28,37 @@ $situri = array_slice($situri, $index, $page*$rows);
 	
 	<div class="box-90">
 
-		S-au afisat <?php echo $results ?> rezultate pentru: <?php echo $searchby . " - " . $value; ?>.
+		S-au gasit <?php echo $results ?> rezultate pentru: <?php echo $searchby . " - " . $value_of_search; ?>.
 		<br><br>
 		<table style="width:100%">
-			<tr>
-				<td>Denumire</td>
-				<td>Categorie</td> 
-				<td>Tip</td>
+			<tr style="background: #1581b4;">
+				<td>Denumire(+pagina detalii)</td>
+				<td>Tip sit</td> 
+				<td>Categorie sit</td> 
+				<td>Cod SIRUTA</td>
 				<td>Judet</td>
 				<td>Localitate</td>
 				<td>Epoca sit</td>
-				<td>Pagina cu detalii</td>
+				<td>Datare</td>
 			</tr>
-			<?php foreach($situri as $value): ?>
-			<tr>
-				<td><?php echo $value["numele_sitului"]; ?></td>
+			<?php $indd=1; foreach($situri as $value): ?>
+			<tr <?php if($indd%2==0) echo "style='background-color: #2e2e2e;'" ?>>
+				<td><a href="details.php?siruta=<?php echo $value["codul_siruta"]; ?>"><?php echo $value["numele_sitului"]; ?></a></td>
 				<td><?php echo $value["categoria_sitului"]; ?></td> 
 				<td><?php echo $value["tipul sitului"]; ?></td> 
-				<td><?php echo $value["Judet"]; ?></td> 
+				<td <?php if($searchby=="codul_siruta") echo search_col(); ?>><?php echo $value["codul_siruta"]; ?></td> 
+				<td <?php if($searchby=="Judet") echo search_col(); ?>><?php echo $value["Judet"]; ?></td> 
 				<td><?php echo $value["localitatea"]; ?></td> 
-				<td><?php echo $value["Epoca sit"]; ?></td> 
-				<td><?php echo $value["suprafata_sitului"]; ?></td> 
+				<td <?php if($searchby=="Epoca sit") echo search_col(); ?>><?php echo $value["Epoca sit"]; ?></td> 
+				<td><?php echo $value["datarea relativa a sitului"]; ?></td> 
 			</tr>
-			<?php endforeach; ?>
+			<?php $indd++; endforeach; ?>
 		</table>
 
 		<div id="pagination">
-			<a href="" class="button">1</a>
+			<?php for($i=1; $i<=$pages; $i++): ?>
+			<a href="table.php?searchby=<?php echo $searchby; ?>" <?php if($page==$i) echo "style='color: gray;'"; ?>><?php echo $i; ?></a>
+		<?php endfor; ?>
 		</div>
 		
 	</div>

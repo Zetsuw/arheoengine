@@ -25,8 +25,12 @@ $( "#search_categories" ).change(function(){
 	if($( "#search_categories" ).val()=="Epoca sit"){
 		$("#search_value").hide();
 		$("#age_options").show();
+		$("#value").prop( "disabled", true );
+		$("#ages").prop( "disabled", false );
 	} else {
 		$("#search_value").show();
 		$("#age_options").hide();
+		$("#value").prop( "disabled", false );
+		$("#ages").prop( "disabled", true );
 	}
 });

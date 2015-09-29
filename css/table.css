@@ -6,3 +6,7 @@ table {
 	border: 1px solid #919191;
 	border-collapse: collapse;
 }
+.searchby {
+	background-color: #f9febc;
+	color: black;
+}

@@ -47,7 +47,7 @@
 				<span class="casetaText">Selectati criteriu:</span>
 
 				<select name="searchby" class="input_criteriu" form="cautare" id="search_categories">
-					<option value="Tip sit">Tip sit</option>
+					<option value="tipul sitului">Tip sit</option>
 					<option value="codul_siruta">Cod SIRUTA</option>
 					<option value="Judet">Judet</option>
 					<option value="Comuna">Comuna</option>
@@ -67,12 +67,30 @@
 				<span class="casetaText">Selectati epoca:</span>
 
 				<select name="ages" class="input_criteriu" form="cautare" id="ages">
+					<option value="Antichitate">Antichitate</option>
+					<option value="Antichitate Târzie">Antichitate Târzie</option>
 					<option value="Eneolitic">Eneolitic</option>
-					<option value="Epoca medievală">Epoca medievală</option>
-					<option value="Tip sit">Epoca migratiilor</option>
-					<option value="Tip sit">Epoca moderna</option>
-					<option value="Tip sit">Epoca romana</option>
-					<option value="Eneolitic">Eneolitic</option>
+					<option value="Epoca bizantina">Epoca bizantină</option>
+					<option value="Epoca bronzului">Epoca bronzului</option>
+					<option value="Epoca elenistica">Epoca elenistică</option>
+					<option value="Epoca fierului">Epoca fierului</option>
+					<option value="Epoca geto-dacica">Epoca geto-dacică</option>
+					<option value="Epoca geto-dacica">Epoca greacă</option>
+					<option value="Epoca greco-romana">Epoca greco-romana</option>
+					<option value="Epoca medievala">Epoca medievală</option>
+					<option value="Epoca migratiilor">Epoca migratiilor</option>
+					<option value="Epoca moderna">Epoca modernă</option>
+					<option value="Epoca post-romana">Epoca post-romană</option>
+					<option value="Epoca romana">Epoca romană</option>
+					<option value="Epoca romano-bizantina">Epoca romano-bizantină</option>
+					<option value="Hallstatt">Hallstatt</option>
+					<option value="Latene">La Tene</option>
+					<option value="Mezolitic">Mezolitic</option>
+					<option value="Necunoscuta">Necunoscuta</option>
+					<option value="Neolitic">Neolitic</option>
+					<option value="Neprecizata">Neprecizata</option>
+					<option value="Paleolitic">Paleolitic</option>
+					<option value="Preistorie">Preistorie</option>
 				</select>
 			</div>
 

@@ -19,10 +19,12 @@ $('.rightClose').click(function(){
 	$("#"+id).fadeOut();
 });
 
-$("#age_options").hide();
+$("#ages").prop( "disabled", true );
+$("#age_options").show();
 
 $( "#search_categories" ).change(function(){
 	if($( "#search_categories" ).val()=="Epoca sit"){
+		alert("dasdasdasasd");
 		$("#search_value").hide();
 		$("#age_options").show();
 		$("#value").prop( "disabled", true );
@@ -34,3 +36,6 @@ $( "#search_categories" ).change(function(){
 		$("#ages").prop( "disabled", true );
 	}
 });
+
+$("#ages").prop( "disabled", true );
+$("#age_options").hide();

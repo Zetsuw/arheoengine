@@ -7,6 +7,12 @@ table {
 	border-collapse: collapse;
 }
 .searchby {
-	background-color: #f9febc;
-	color: black;
+	background-color: #f9febc; color: black;
+}
+
+#pagination{
+	text-align: center;
+	float: center;
+	margin: 15px auto;
+
 }

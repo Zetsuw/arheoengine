@@ -24,7 +24,6 @@ $("#age_options").show();
 
 $( "#search_categories" ).change(function(){
 	if($( "#search_categories" ).val()=="Epoca sit"){
-		alert("dasdasdasasd");
 		$("#search_value").hide();
 		$("#age_options").show();
 		$("#value").prop( "disabled", true );

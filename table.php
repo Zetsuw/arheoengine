@@ -132,7 +132,6 @@ while(! feof($file))
 		//if(levenshtein($table[$searchby],$value_of_search))
 		{
 			$situri[] = $table;
-			print_r(levenshtein($table[$searchby],$value_of_search));
 		}
 	}
 }
